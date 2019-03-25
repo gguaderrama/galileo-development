@@ -5,138 +5,57 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { withStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-
-// Styles
-import { styles } from "./styles";
-
-// Utils
-import { pathKeyNormalizer } from "utils/misc";
-import { formValidator } from "utils/form-utils";
 
 // Actions
 import * as actions from "./redux-about/actions";
 import * as catalogsCollectionActions from "App/_commons/components/CatalogsCollectionPanel/redux-about/actions";
 import * as appActions from "redux/shared-reducers/app-actions";
-
 // Common Components
 import AccordionPanel from "App/_commons/components/AccordionPanel";
-//import NotesPanel from 'App/_commons/components/NotesPanel';
 import {
   ButtonsContainer,
   ButtonOriginPrimary
 } from "App/_commons/elements/ButtonsFeature";
-
-// Own Components
-// Interfaces
-import { panelsInterface } from "./interfaces/prospectoDetailInterface";
-const {
-  /*panelInfo,*/ panelInfoTabs: i_panelInfoTabs,
-  panelGestion: i_panelGestion,
-  panelGestionesHistory
-} = panelsInterface;
-
 // Commons
 import Icon from "@material-ui/core/Icon";
 import { TitlePanelContainerAlt } from "App/_commons/elements/PanelContainer";
-const iconStyle = { marginRight: 20, position: "relative", top: 5 };
 import DataCollectionPanel, {
   handleAttrChangeValue
 } from "App/_commons/components/DataCollectionPanel";
-
-
 // Agregando CSS 
-import '../../_globals/css/Solicitudes.css';
+import './css/captura_solicitud_pannels.css';
+import { styles } from "./styles";
 // Template agregado 
 import MoreInfoPanel_solicitud from './viewTemplates/MoreInfoPanel_solicitud';
 import MoreInfoPanel_credito from './viewTemplates/MoreInfoPanel_credito';
-
 class Captura extends Component {
   constructor(props) {
     super(props);
     // interface to validate
     this.state = {};
+    this.handleOnChangeInput = this.handleOnChangeInput.bind(this);
   }
-
   /*
    * React methods
    */
+
+  handleOnChangeInput(event, panel) {
+    //this.setState({[panel]: {...this.state[panel], [event.target.name]: event.target.value}});
+  }
   componentDidMount() {
         this.setState({allData:{...this.props.initData}});
     
   }
-
-  componentWillReceiveProps(nextProps) {}
-
-  /*
-   * Own methods
-   */
-  loadExtendData(session) {}
-
-  handleAttrChangeValue(event, panelRelated = null) {}
-
-  handleRowChange(event, rowId, whishPanel) {
-    //console.log('handleRowChange in Captura :>', event.currentTaget, rowId, whishPanel);
-  }
-
-  handleMoreInfo(event, panelRelated) {}
-
-  getDataFromPanelModal(data, stateRef) {
-    this.setState({ [stateRef]: data });
-  }
-
-  handleAddNote(event, AddNoteComponent) {}
-
-  handleOnSubmitNote(note) {
-    console.log("handleOnSubmitNote>", note);
-  }
-
-  listSpreadBuilder(whishPanel, _i_iterator, _iterator) {}
-
-  transformDataToPanelGestion(dataFromBuffer) {}
-
-  handleGenerarGestionProspecto(event) {}
-
-  handleError({ msg, inputList }) {
-    this.props.setSnackbarNotification({
-      opened: true,
-      title: "Validación de campos",
-      message: `${msg.errorMsg}. ${msg.inputListMissingMsg}`,
-      type: "error"
-    });
-  }
-
-  dinamicValidate(formToValidate) {
-    if (
-      formToValidate.respuesta === "CITA" ||
-      formToValidate.respuesta === "LLDP"
-    ) {
-      return {
-        ...this.generarGestionInterface.fields,
-        scheduledDate: {
-          ...this.generarGestionInterface.fields.scheduledDate,
-          required: true
-        }
-      };
-    }
-    //
-    return this.generarGestionInterface.fields;
-  }
-
   //
   render() {
-             console.log(this.props);
-             // Accordion about
-             // Gestion
-
-             const {
+            const {
                classes = { closeButton: "" },
                handleOnClose = e => console.log("Close icon"),
                submitDisabled = false
              } = this.props;
              const { allData } = this.state;
 
-             const dataCollectionSolicitud = {
+             const dataCapturaSolicitud = {
                classes,
                ...allData,
                title: null,
@@ -162,7 +81,7 @@ class Captura extends Component {
                    name: "datos_credito",
                    title: (
                      <Fragment>
-                       <Icon style={iconStyle}>description</Icon>
+                       <Icon className={classes.iconStyle}>description</Icon>
                        <TitlePanelContainerAlt>
                          DATOS DE CRÉDITO
                        </TitlePanelContainerAlt>
@@ -173,7 +92,7 @@ class Captura extends Component {
                    name: "integrantes",
                    title: (
                      <Fragment>
-                       <Icon style={iconStyle}>group</Icon>
+                       <Icon className={classes.iconStyle}>group</Icon>
                        <TitlePanelContainerAlt>
                          INTEGRANTES
                        </TitlePanelContainerAlt>
@@ -184,7 +103,7 @@ class Captura extends Component {
                    name: "referencias",
                    title: (
                      <Fragment>
-                       <Icon style={iconStyle}>notes</Icon>
+                       <Icon className={classes.iconStyle}>notes</Icon>
                        <TitlePanelContainerAlt>
                          REFERENCIAS
                        </TitlePanelContainerAlt>
@@ -195,7 +114,7 @@ class Captura extends Component {
                    name: "seguros",
                    title: (
                      <Fragment>
-                       <Icon style={iconStyle}>security</Icon>
+                       <Icon className={classes.iconStyle}>security</Icon>
                        <TitlePanelContainerAlt>
                          SEGUROS
                        </TitlePanelContainerAlt>
@@ -206,7 +125,7 @@ class Captura extends Component {
                    name: "anexar_documentos",
                    title: (
                      <Fragment>
-                       <Icon style={iconStyle}>scanner</Icon>
+                       <Icon className={classes.iconStyle}>scanner</Icon>
                        <TitlePanelContainerAlt>
                          ANEXAR DOCUMENTOS (OPCIONAL)
                        </TitlePanelContainerAlt>
@@ -249,7 +168,7 @@ class Captura extends Component {
                  <div className="right">
                    <Fragment>
                      <DataCollectionPanel
-                       {...dataCollectionSolicitud}
+                       {...dataCapturaSolicitud}
                      />
                    </Fragment>
                    <Fragment>
