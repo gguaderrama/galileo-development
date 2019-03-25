@@ -3,4 +3,9 @@ export const styles = theme => ({
     margin: theme.spacing.unit,
     width: '13%',
   },
+  iconStyle:{
+    marginRight: 20,
+    position: "relative",
+    top: 5 
+  }
 })
