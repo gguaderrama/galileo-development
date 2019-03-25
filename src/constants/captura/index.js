@@ -29,7 +29,7 @@ export const stepsCaptura = [
     },
     {
       "id": 4,
-      "nombre": "Autorización",
+      "nombre": "Automatización",
       "icon": "assignment",
       "color": "disabled",
       "disabled": true

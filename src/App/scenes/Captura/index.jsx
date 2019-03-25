@@ -50,6 +50,7 @@ import '../../_globals/css/Solicitudes.css';
 // Template agregado 
 import MoreInfoPanel_solicitud from './viewTemplates/MoreInfoPanel_solicitud';
 import MoreInfoPanel_credito from './viewTemplates/MoreInfoPanel_credito';
+import { SteperTemplate } from "./viewTemplates/SteperTemplate";
 
 class Captura extends Component {
   constructor(props) {
@@ -227,6 +228,7 @@ class Captura extends Component {
              // Render indeed
              return (
                <div>
+                 <SteperTemplate />
                  <div className="left">
                    <p>
                      Captura toda la información requerida en las
