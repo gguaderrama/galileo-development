@@ -1,0 +1,3 @@
+export const SET_SESSION = 'SET_SESSION';
+export const CONSULTAR_VALORES = 'CONSULTAR_VALORES';
+export const GET_ACCESS = 'GET_ACCESS';

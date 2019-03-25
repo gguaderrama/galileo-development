@@ -1,0 +1,1 @@
+export const getReferenciasSeleccionadas = state => state.referencias;

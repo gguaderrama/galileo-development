@@ -1,0 +1,22 @@
+.MuiButton-containedPrimary-124 {
+  background-color: rgb(155, 155, 155) !important ;
+}
+
+.AccordionPanel-divContainer-2 {
+  margin-bottom: 16px !important;
+}
+
+.left{
+  width: 68%;
+  float: left; 
+}
+
+.left  p{
+  font-size: 15px;
+  color: rgb(84, 84, 84);
+}
+
+.right{
+  width: 30%;
+  float: right;
+}

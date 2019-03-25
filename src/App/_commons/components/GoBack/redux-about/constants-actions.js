@@ -1,0 +1,6 @@
+const ACTIONS_GOBACK = Object.freeze({
+  SHOW: 'ACTIONS_GOBACK_SHOW',
+  HIDDEN: 'ACTIONS_GOBACK_HIDDEN',
+})
+
+export default ACTIONS_GOBACK;

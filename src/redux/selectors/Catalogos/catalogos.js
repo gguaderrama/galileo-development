@@ -1,0 +1,1 @@
+export const getCatalogos = state => state.catalogos;

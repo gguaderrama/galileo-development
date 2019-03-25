@@ -1,0 +1,1 @@
+export const getVisorExpedientes = state => state.visorExpedientes;

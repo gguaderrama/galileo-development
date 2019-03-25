@@ -1,0 +1,1 @@
+export const getXmlValidoPdf = state => state.xmlValidoPdf && state.xmlValidoPdf.respuesta;

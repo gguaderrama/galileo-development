@@ -1,0 +1,1 @@
+export const getCreditData = state => state.datosCredito;

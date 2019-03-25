@@ -1,0 +1,38 @@
+.Content {
+  min-height: 480px;
+  width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.Content .milcuatrocientos {
+  width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.Content .mildocientosochenta {
+  width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.Content-intro {
+  font-size: large;
+}
+
+@media screen and (max-width: 1280px) {
+  .Content, .Content .milcuatrocientos, .Content .mildocientosochenta {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .Content, .Content .milcuatrocientos, .Content .mildocientosochenta {
+    width: 1024px;
+    margin: 0 auto;
+    padding: 0 5px;
+  }
+}

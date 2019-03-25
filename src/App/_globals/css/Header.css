@@ -1,0 +1,48 @@
+.Header {
+  text-align: center;
+  background-color: #eee;
+  height: auto;
+  padding: 10px;
+  color: white;
+  border-bottom: dotted blue 1px;
+  font-size: .8em;
+}
+
+.Header-logo {
+  animation: Header-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.Header-title {
+  font-size: 1.5em;
+}
+
+.Menu {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.Menu li {
+  display: inline-block;
+  padding: 0px 10px;
+  border-left: 1px #555555 solid;
+}
+
+.Menu li a {
+  color: #c9c9c9;
+  text-decoration: none;
+}
+
+.Menu li a:hover {
+  color: white;
+}
+
+.Menu li:first-child {
+  border-left: none;
+}
+
+@keyframes Header-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

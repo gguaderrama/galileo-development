@@ -1,0 +1,319 @@
+{
+  "clientes": [
+    {
+      "numeroPersona": "77895403",
+      "nombre": "JUAN",
+      "rfc": "JUSJO798798",
+      "estado": "CHI",
+      "tipoPersona": "CLIENTE",
+      "domParticular": "AQUI",
+      "domEmpleo": "ALLA"
+    },
+    {
+      "numeroPersona": "77895401",
+      "nombre": "JORGE",
+      "rfc": "PEREZ",
+      "estado": "CHI",
+      "tipoPersona": "CLIENTE",
+      "domParticular": "ALLA",
+      "domEmpleo": "AQUI"
+    }
+  ],
+  "opciones": [
+    {
+      "id": 0,
+      "nombre": "Búsqueda Cliente",
+      "icon": "search",
+      "color": "primary",
+      "disabled": false
+    },
+    {
+      "id": 1,
+      "nombre": "Datos Crédito",
+      "icon": "chrome_reader_mode",
+      "color": "disabled",
+      "disabled": true
+    },
+    {
+      "id": 2,
+      "nombre": "Integrantes",
+      "icon": "people",
+      "color": "disabled",
+      "disabled": true
+    },
+    {
+      "id": 3,
+      "nombre": "Digitalización",
+      "icon": "scanner",
+      "color": "disabled",
+      "disabled": true
+    },
+    {
+      "id": 4,
+      "nombre": "Pre-evaluación",
+      "icon": "create",
+      "color": "disabled",
+      "disabled": true
+    }
+  ],
+  "stepsCaptura": [
+    {
+      "id": 0,
+      "nombre": "Captura",
+      "icon": "scanner",
+      "color": "primary"
+    },
+    {
+      "id": 1,
+      "nombre": "Evaluación",
+      "icon": "spellcheck",
+      "color": "primary"
+    },
+    {
+      "id": 2,
+      "nombre": "Investigación",
+      "icon": "search",
+      "color": "primary"
+    },
+    {
+      "id": 3,
+      "nombre": "Análisis de Crédito",
+      "icon": "visibility",
+      "color": "primary"
+    },
+    {
+      "id": 4,
+      "nombre": "Autorización",
+      "icon": "timeline",
+      "color": "primary"
+    },
+    {
+      "id": 5,
+      "nombre": "Cierre",
+      "icon": "assignment_turned_in",
+      "color": "primary"
+    }
+  ],
+  "empresas": [
+    {
+      "claveEmpresa": 1,
+      "nombreEmpresa": "FISA"
+    },
+    {
+      "claveEmpresa": 2,
+      "nombreEmpresa": "FINSOL"
+    }
+  ],
+  "oficinas": [
+    {
+      "claveOficina": 1,
+      "nombreOficina": "TOLUCA"
+    },
+    {
+      "claveOficina": 2,
+      "nombreOficina": "CELAYA"
+    },
+    {
+      "claveOficina": 3,
+      "nombreOficina": "QUERETARO"
+    }
+  ],
+  "campanias": [
+    {
+      "claveCampania": "ACCELU",
+      "nombreCampania": "CELULARES"
+    },
+    {
+      "claveCampania": "AUMLCR",
+      "nombreCampania": "AUMENTOS LCR"
+    },
+    {
+      "claveCampania": "FORMERS",
+      "nombreCampania": "FORMERS PREFERENTE"
+    },
+    {
+      "claveCampania": "RENANT",
+      "nombreCampania": "RENOVACIONES ANTICIPADAS"
+    }
+  ],
+  "statuses": [
+    {
+      "claveStatus": "A",
+      "nombreStatus": "ACTIVO"
+    },
+    {
+      "claveStatus": "I",
+      "nombreStatus": "INACTIVO"
+    },
+    {
+      "claveStatus": "N",
+      "nombreStatus": "NUEVO"
+    }
+  ],
+  "mediosGestion": [
+    {
+      "claveMedioGestion": "CART",
+      "nombreMedioGestion": "CARTA"
+    },
+    {
+      "claveMedioGestion": "LLAM",
+      "nombreMedioGestion": "LLAMADA"
+    },
+    {
+      "claveMedioGestion": "MENS",
+      "nombreMedioGestion": "MENSAJE"
+    },
+    {
+      "claveMedioGestion": "VIDO",
+      "nombreMedioGestion": "VISITA DOMICILIO"
+    }
+  ],
+  "respuestasGestion": [
+    {
+      "claveRespuestaGestion": "BUZO",
+      "nombreRespuestaGestion": "BUZON"
+    },
+    {
+      "claveRespuestaGestion": "NOCT",
+      "nombreRespuestaGestion": "NO CONTESTA"
+    },
+    {
+      "claveRespuestaGestion": "NOIN",
+      "nombreRespuestaGestion": "NO INTERESA"
+    }
+  ],
+  "periodos": [
+    {
+      "clavePeriodo": 201811,
+      "nombrePeriodo": "201811"
+    },
+    {
+      "clavePeriodo": 201812,
+      "nombrePeriodo": "201812"
+    }
+  ],
+  "detinos": [
+    {
+      "claveDestino": "PISO",
+      "nombreDestino": "PISO"
+    },
+    {
+      "claveDestino": "CALLE",
+      "nombreDestino": "CALLE"
+    }
+  ],
+  "personas": [
+    {
+      "id": "123",
+      "persona": "000000000123",
+      "nombre": "JUAN JOSE LOPEZ LOPEZ",
+      "rfc": "LOLJ770721F4A",
+      "domicilio": "Calle : AND TLAXCALA 15, # Ext : SN, # Int : , 1ER SECTOR FIDELAC, LAZARO CARDENAS,60952",
+      "codigoEstado": "MIC",
+      "tipoPersona": "CLIENTE",
+      "gestor": "MARTHA TARANGO VELAZQUEZ",
+      "numeroGestiones": 1,
+      "fechaUltimaGestion": 1541550144040,
+      "contrato": "12345678901",
+      "calificacion": 2,
+      "fechaUltimaDisposicion": 1541550144040,
+      "fechaUltimoMovimiento": 1541629105182,
+      "diaPago": 8,
+      "planCelular": true,
+      "descuentoRegalos": true,
+      "ofertas": [
+        {
+          "id": 0,
+          "segmento": "FORMAL",
+          "producto": "CREDINMEDIATO PENSIONADO",
+          "montoMinimo": 5000,
+          "montoMaximo": 30000,
+          "plazoMinimo": 12,
+          "plazoMaximo": 12,
+          "tasaMinimo": 9.15,
+          "tasaMaximo": 9.15,
+          "frecuencia": "MENSUAL",
+          "analisis": "ANALISIS",
+          "anticipada": "NO"
+        }
+      ],
+      "solicitudes": [
+        {
+          "id": 0,
+          "solicitud": "012345678999",
+          "status": "A",
+          "fechaSolicitud": 1541629105182,
+          "montoPago": 1200,
+          "frecuenciaPago": "MENSUAL",
+          "producto": "TRADICIONAL",
+          "contrato": "12345678901",
+          "efectivoOtorgado": 10000,
+          "oficina": "TOLUCA",
+          "tipoProducto": "FTCS",
+          "segmento": "FORMAL"
+        }
+      ],
+      "contratos": [
+        {
+          "id": 0,
+          "contrato": "12345678901",
+          "solicitud": "012345678999",
+          "oficina": "TOLUCA",
+          "tipoCredito": "SUBSECUENTE",
+          "fechaContrato": 1541629105182,
+          "fechaLiquidacion": 1541629105182,
+          "efectivo": 3000,
+          "montoPago": 188,
+          "numeroPagos": 36,
+          "status": "A",
+          "producto": "FTCS"
+        }
+      ],
+      "contactos": [
+        {
+          "id": 0,
+          "tipo": "MOVIL",
+          "consecutivo": 1,
+          "nombre": "JUAN PEREZ LOPEZ",
+          "contacto": "5515784598",
+          "fechaUltimaModificacion": 1541629105182
+        }
+      ],
+      "gestionPersonaOfertas": [
+        {
+          "id": 0,
+          "producto": "CREDINMEDIATO PENSIONADO",
+          "montoCredito": 10000,
+          "montoSeguro": 100,
+          "montoPago": 1000,
+          "tasa": 9.15,
+          "plazo": 12,
+          "frecuencia": "MENSUAL",
+          "efectivoOtorgado": 10000
+        }
+      ],
+      "gestiones": [
+        {
+          "id": 0,
+          "periodo": 201811,
+          "campania": "CELULARES",
+          "fechaGestion": 1541629105182,
+          "gestor": "PABLO MENDEZ LOPEZ",
+          "medioContacto": "TELEFONO",
+          "tipoGestion": "LLAMADA",
+          "respuestaCliente": "NO INTERESA",
+          "contacto": "5515784598",
+          "comentarios": "CLIENTE NO INTERESADO"
+        }
+      ],
+      "notas": [
+        {
+          "id": 1,
+          "gestor": "PABLO MENDEZ LOPEZ",
+          "fechaCreacion": 1541629105182,
+          "nota": "Se intento realizar la gestion sin exitohujodasjohjifdsf hisdoajdsaopdsjaop jdisa0ojdsadpsa"
+        }
+      ]
+    }
+  ]
+}

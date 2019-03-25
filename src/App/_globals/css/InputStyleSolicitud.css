@@ -1,0 +1,36 @@
+.MuiFormControl-marginNormal-125 {
+  margin-top: 7px !important;
+  margin-bottom: 8px;
+}
+
+.Captura-formControl-1 {
+  /* margin: 0px !important; */
+  margin-right: 2px !important;
+  margin-top: -6.4% !important;
+}
+
+.App .Panel-container {
+  padding: 10px !important;
+}
+
+
+h6{
+  font-size: 14px;
+  margin: 11px;
+} 
+
+.Panel-container{
+  margin-bottom: 8px !important; 
+}
+
+
+
+/* added */
+
+.App .Panel-container {
+  border: solid 1px #e8e8e8!important;
+  border-radius: 5px;
+  padding: 24px 18px 14px;
+  margin-bottom: 30px;
+  background-color: white;
+}
