@@ -28,6 +28,7 @@ import { styles } from "./styles";
 // Template agregado 
 import MoreInfoPanel_solicitud from './viewTemplates/MoreInfoPanel_solicitud';
 import MoreInfoPanel_credito from './viewTemplates/MoreInfoPanel_credito';
+import AcordionCredito from './viewTemplates/acordion_credito';
 class Captura extends Component {
   constructor(props) {
     super(props);
@@ -134,7 +135,12 @@ class Captura extends Component {
                  }
                ],
                contentList: [
-                 <div>Esto es un test</div>,
+                 <div style={{ 'width': '100%'}}> 
+                    <AcordionCredito></AcordionCredito>
+                       
+                           
+
+                 </div>,
                  <div>demop</div>,
                  <div>prueba</div>,
                  <div>seguros</div>,

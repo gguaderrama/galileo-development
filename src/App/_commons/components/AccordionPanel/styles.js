@@ -1,6 +1,6 @@
 export default theme => ({
   divContainer: {
-    marginBottom: 30,
+    marginBottom: 30
   },
   root: {
     width: '100%',
