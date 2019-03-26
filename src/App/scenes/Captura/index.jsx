@@ -29,6 +29,7 @@ import { styles } from "./styles";
 import MoreInfoPanel_solicitud from './viewTemplates/MoreInfoPanel_solicitud';
 import MoreInfoPanel_credito from './viewTemplates/MoreInfoPanel_credito';
 import { SteperTemplate } from "./viewTemplates/SteperTemplate";
+import {Referencias} from './Referencias/index'
 
 class Captura extends Component {
   constructor(props) {
@@ -138,7 +139,7 @@ class Captura extends Component {
                contentList: [
                  <div>Esto es un test</div>,
                  <div>demop</div>,
-                 <div>prueba</div>,
+                 <Referencias /> ,
                  <div>seguros</div>,
                  <div>anexar documentos</div>
                ]

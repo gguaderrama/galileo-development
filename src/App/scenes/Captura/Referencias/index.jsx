@@ -1,25 +1,16 @@
 // Dependencies
 import React, {Component} from 'react';
-// _commons
-import PanelContainer from 'App/_commons/elements/PanelContainer';
 // INDEED
 import DataCollectionPanel, { handleAttrChangeValue } from 'App/_commons/components/DataCollectionPanel';
+import { ReferenciasTemplate } from './viewTemplates/ReferenciasTemplate';
 
 
-class Referencias extends Component {
-  render(){
-    return(
-      <div>
-        <PanelContainer>
+export const Referencias = () => (
+      <div style={{width:100+'%'}}>
           <DataCollectionPanel
             title={'Gestionar Integrantes'}
-            intoPanelContainer={false}>
-            
+            intoPanelContainer={false} >
+            <ReferenciasTemplate />
           </DataCollectionPanel>
-        </PanelContainer>
       </div>
     );
-  }
-}
-
-export default Referencias;
