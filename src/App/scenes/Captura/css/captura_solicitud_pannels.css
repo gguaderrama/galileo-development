@@ -27,7 +27,7 @@ hr{
 }
 
 .acordion h4 {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .col-md-3{
@@ -36,6 +36,35 @@ hr{
 }
 
 .MuiSelect-select-135{
-  font-size: 13px !important;
+  font-size: 14px !important;
   color: #929191 !important;
 }
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: black !important;
+  font-size: 14px !important;
+  opacity: 0.8 !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color:black  !important;
+  font-size: 14px !important;
+  opacity: 0.8 !important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: black  !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: black ;
+}
+
+.MuiInputLabel-animated-124{
+  color: #212121 !important;
+  font-size: 17px;
+}
+
+.questionp{
+  font-size: 14px !important;
+    color: #212121 !important;
+    margin: 0 !important;
+}
+

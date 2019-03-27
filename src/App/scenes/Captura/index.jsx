@@ -28,7 +28,8 @@ import { styles } from "./styles";
 // Template agregado 
 import MoreInfoPanel_solicitud from './viewTemplates/MoreInfoPanel_solicitud';
 import MoreInfoPanel_credito from './viewTemplates/MoreInfoPanel_credito';
-import AcordionCredito from './viewTemplates/acordion_credito';
+import DatosCredito from './viewTemplates/datos_credito';
+import Integrantes from './viewTemplates/integrantes';
 class Captura extends Component {
   constructor(props) {
     super(props);
@@ -49,6 +50,7 @@ class Captura extends Component {
   }
   //
   render() {
+    console.log(this.props)
             const {
                classes = { closeButton: "" },
                handleOnClose = e => console.log("Close icon"),
@@ -136,12 +138,11 @@ class Captura extends Component {
                ],
                contentList: [
                  <div style={{ 'width': '100%'}}> 
-                    <AcordionCredito></AcordionCredito>
-                       
-                           
-
+                    <DatosCredito></DatosCredito>
                  </div>,
-                 <div>demop</div>,
+                 <div style={{ 'width': '100%'}}> 
+                    <Integrantes></Integrantes>
+                 </div>,
                  <div>prueba</div>,
                  <div>seguros</div>,
                  <div>anexar documentos</div>
