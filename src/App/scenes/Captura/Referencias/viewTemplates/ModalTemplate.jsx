@@ -1,10 +1,8 @@
 import React, { Component,Fragment } from 'react';
 import {connect} from 'react-redux';
 // Commons
-import { TitlePanelContainerAlt } from 'App/_commons/elements/PanelContainer';
 import TextFieldDecored from 'App/_commons/elements/TextFieldDecored';
 import SelectDecored from 'App/_commons/elements/SelectDecored';
-import PanelContainer from 'App/_commons/elements/PanelContainer';
 import DataCollectionPanel, { handleAttrChangeValue }  from 'App/_commons/components/DataCollectionPanel'
 import { RowTemplate} from './RowTemplate';
 import ResultTablePanel from 'App/_commons/components/ResultTablePanel';
@@ -48,15 +46,17 @@ class ModalTemplate extends Component{
     return(
       <Fragment>
         <h3>Nueva Referencia</h3>
+        <div style={{width:100+'%'}}>
           <DataCollectionPanel {...this.state.withTemplatePanel} 
             title={'Datos Referencia'}
+            statusList={statusList}
             handleOnChange={e => this.handleAttrChangeValue(e, 'withTemplatePanel')}>
             <div>
               <div style={{display:'flex', justifyContent: 'space-between'}}>
                   <TextFieldDecored style={{margin:'0 10px', flexGrow:1, marginLeft:0}} valuetext="name" label="Nombre(s)"  />
                   <TextFieldDecored style={{margin:'0 10px', flexGrow:1}} valuetext="lastnamefather" label="Apellido Paterno"  />
                   <TextFieldDecored style={{margin:'0 10px', flexGrow:1}} valuetext="lnamemother" label="Apellido Materno"  />
-                  <SelectDecored style={{margin:'0 10px', flexGrow:1}} valuetext="familiar" label="Parentesco" selectlist="statusList" keys="theKey theName"  />              
+                  <SelectDecored style={{margin:'0 10px', flexGrow:1,width: '16%'}} valuetext="familiar" label="Parentesco" selectlist="statusList" keys="theKey theName"  />              
               </div>
               <div>
                   <TextFieldDecored style={{margin:'0 10px', flexGrow:1}} valuetext="phone" label="Teléfono particular (con lada)"  />
@@ -77,9 +77,17 @@ class ModalTemplate extends Component{
           <DataCollectionPanel intoPanelContainer={true} >
             <div><ResultTablePanel {...resultTablePanelSpread} /> </div>
           </DataCollectionPanel>
+        </div>
       </Fragment>
     )}
 }
 
 
 export default connect(null,appActions)(ModalTemplate);
+
+export const statusList = [
+  {theKey: 'C', theName: 'Contento'},
+  {theKey: 'T', theName: 'Triste'},
+  {theKey: 'E', theName: 'Enojado'},
+  {theKey: 'A', theName: 'Aburrido'},
+];
