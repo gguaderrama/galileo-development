@@ -38,15 +38,14 @@ const MoreInfoPanel_personales = props => <div>
         radioList={[{label:'Masculino', valuetext: 'M'}, {label:'Femenino', valuetext: 'F'}]} />
     </div>
     <hr />
-    <TitlePanelContainerAlt>Datos con quien vive</TitlePanelContainerAlt>
+    <TitlePanelContainerAlt>Datos del conyugue del solicitante</TitlePanelContainerAlt>
     <div>
       <TextFieldDecored valuetext="nombreConyuge" label="Nombre(s)" />
       <TextFieldDecored valuetext="apellidoPaternoConyuge" label="Apellido paterno" />
       <TextFieldDecored valuetext="apellidoMaternoConyuge" label="Apellido Materno" />
-      <SelectDecored valuetext="relacion" selectlist="relacionList" keys="llave nombre" label="Relación con la persona" />
+      <TextFieldDecored valuetext="telefonoCelular" label="Telefono Celular" />
     </div>
-    <div><RadiobuttonGroup valuetext="sexoConyuge" name="sexoConyuge" label="Género"
-      radioList={[{label:'Masculino', valuetext: 'M'}, {label:'Femenino', valuetext: 'F'}]} /><br /></div>
+   
 
   </PanelContainer>
 </div>

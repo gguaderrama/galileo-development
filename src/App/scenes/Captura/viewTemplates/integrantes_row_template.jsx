@@ -25,7 +25,7 @@ const TableRowTemplate = props => {
     </TableCell>
       <TableCell className={classes.tableCell}>
       <Tooltip title="Ver Detalle">
-        <IconButton color="primary" onClick={e => this.handleMoreInfo(e, 'panelInfo')} >
+        <IconButton color="primary" onClick={e => props.handleRowChange(e, 'panelInfo')} >
           
           <Icon>visibility</Icon>
         </IconButton>

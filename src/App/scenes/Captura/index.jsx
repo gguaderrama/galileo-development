@@ -156,7 +156,7 @@ class Captura extends Component {
                     <DatosCredito></DatosCredito>
                  </div>,
                  <div style={{ 'width': '100%'}}> 
-                    <Integrantes onClick={this.handleMoreInfo} {...this.props}></Integrantes>
+                    <Integrantes {...this.props}></Integrantes>
                  </div>,
                  <div>prueba</div>,
                  <div>seguros</div>,

@@ -54,8 +54,13 @@ const TextFieldDecoredMain = props => {
             classes: {
               root: classes.root,
               disabled: classes.disabled,
-            }, ...inputProps}}
-        InputLabelProps={InputLabelProps}
+            }, ...inputProps}}            
+        InputLabelProps={{
+        style: { color: '#000000' },
+        FormLabelClasses: {
+          style: { color: '#000000' }
+          },
+        }}
         variant={variant}
         multiline={multiline}
         margin="normal" />

@@ -8,10 +8,15 @@ import PanelContainer, { TitleMainHead, TitlePanelContainer } from 'App/_commons
 import IntegrantesTableInterface from './interfaces/integrantesTableInterface';
 import IntegrantesRowTemplate from './integrantes_row_template';
 import ResultTablePanel from 'App/_commons/components/ResultTablePanel';
+
+/* Template Added */
+import MoreInfoPanel from './detalle/MoreInfoPanel';
 class AcordionCredito extends React.Component{
   constructor(props){
     super(props)
+    this.handleRowChange = this.handleRowChange.bind(this);
     this.state = {
+      modalProps: this.props,
       searchForm: null,
       disabledList: [],
       searchResult: {
@@ -19,9 +24,32 @@ class AcordionCredito extends React.Component{
       }
     }
   }
-  handleRowChange(){}
+  handleRowChange(event,  whishPanel) {
+    this.props.setDialogNotificationModal({
+      content: <MoreInfoPanel
+        initData={this.state.panelInfo}
+        setDataToParent={this.getDataFromPanelModal}
+        handleOnClose={this.props.setDialogNotificationModalToInit} />,
+      opened: true,
+      buttonsHidden: true,
+    });
+    //console.log('handleRowChange in ProspectoDetail :>', event.currentTaget, rowId, whishPanel);
+    // switch (whishPanel) {
+    //   case 'simulador':
+    //     this.props.setDialogNotificationModal({
+    //       content: <SimulatorPanel
+    //         //initData={this.state.panelInfoMore}
+    //         //setDataToParent={this.getDataFromPanelModal}
+    //         handleOnClose={this.props.setDialogNotificationModalToInit} />,
+    //       opened: true,
+    //       buttonsHidden: true,
+    //     });
+    //     break;
+    //   default:
+
+    // }
+  }
   render(){
-    console.log(this.props.arrayIntegrantes.arrayIntegrantesTable)
     const resultTablePanelSpread = {
       title: null,
       columsData: IntegrantesTableInterface.colums,
@@ -36,7 +64,7 @@ class AcordionCredito extends React.Component{
     return(
       <div className="integrantes">
         <h4>Gestionar integrantes</h4>
-        <ResultTablePanel {...resultTablePanelSpread} />
+        <ResultTablePanel {...resultTablePanelSpread}  />
       </div>
     )
   }
