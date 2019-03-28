@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 // Commons
 import TextFieldDecored from 'App/_commons/elements/TextFieldDecored';
 import SelectDecored from 'App/_commons/elements/SelectDecored';
-import DataCollectionPanel, { handleAttrChangeValue }  from 'App/_commons/components/DataCollectionPanel'
+import DataCollectionPanel, { handleAttrChangeValue }  from 'App/_commons/components/DataCollectionPanel';
 import { RowTemplate} from './RowTemplate';
 import ResultTablePanel from 'App/_commons/components/ResultTablePanel';
 // Actions

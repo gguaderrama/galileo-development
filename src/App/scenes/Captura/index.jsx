@@ -29,7 +29,8 @@ import { styles } from "./styles";
 import MoreInfoPanel_solicitud from './viewTemplates/MoreInfoPanel_solicitud';
 import MoreInfoPanel_credito from './viewTemplates/MoreInfoPanel_credito';
 import { SteperTemplate } from "./viewTemplates/SteperTemplate";
-import {Referencias} from './Referencias'
+import {Referencias} from './Referencias';
+import Seguros from './Seguros';
 
 class Captura extends Component {
   constructor(props) {
@@ -140,7 +141,7 @@ class Captura extends Component {
                  <div>Esto es un test</div>,
                  <div>demop</div>,
                  <Referencias /> ,
-                 <div>seguros</div>,
+                 <Seguros />,
                  <div>anexar documentos</div>
                ]
                //   spaceBetween: 30
