@@ -18,6 +18,7 @@ const Right_Dynamsoft_OnMouseClick = (index) => {
     console.log("imagen a cargar del buffer de las miniaturas " + index);
     DW_RIGHTObject.CopyToClipboard(index); //Copy the image you just clicked on
     DWObject.LoadDibFromClipboard(); //Load the same image
+
 }
 
 const loadLocalImage = () => {

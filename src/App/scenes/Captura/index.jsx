@@ -32,6 +32,7 @@ import DatosCredito from './viewTemplates/datos_credito';
 import Integrantes from './viewTemplates/integrantes';
 // Template Detalle 
 import MoreInfoPanel from './viewTemplates/detalle/MoreInfoPanel';
+import DigitalizacionComponent from 'components/captura/DigitalizacionComponent';
 
 
 class Captura extends Component {
@@ -160,7 +161,9 @@ class Captura extends Component {
                  </div>,
                  <div>prueba</div>,
                  <div>seguros</div>,
-                 <div>anexar documentos</div>
+                 <div style={{ 'width': '100%'}}> 
+                 <DigitalizacionComponent {...this.props} />
+                 </div>
                ],
                contentPadding: 0
                //   spaceBetween: 30
