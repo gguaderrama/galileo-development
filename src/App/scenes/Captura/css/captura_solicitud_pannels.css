@@ -28,6 +28,12 @@ hr{
 
 .acordion h4 {
   font-size: 14px;
+  padding: 8px -1px;
+}
+
+.integrantes h4 {
+  font-size: 14px;
+  padding: 8px 6.1%;
 }
 
 .col-md-3{
@@ -58,7 +64,7 @@ hr{
 }
 
 .MuiInputLabel-animated-124{
-  color: #212121 !important;
+  /* color: #212121 !important; */
   font-size: 17px;
 }
 

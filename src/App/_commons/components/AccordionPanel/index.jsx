@@ -20,7 +20,7 @@ const ExpansionPanelSummary = withStyles(theme => ({
   root: {
     borderBottom: '1px solid #e8e8e8 !important',
     marginBottom: -1,
-    minHeight: 56,
+    minHeight: 56
   },
   expanded: {
     margin: 'auto',

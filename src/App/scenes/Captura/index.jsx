@@ -30,12 +30,17 @@ import MoreInfoPanel_solicitud from './viewTemplates/MoreInfoPanel_solicitud';
 import MoreInfoPanel_credito from './viewTemplates/MoreInfoPanel_credito';
 import DatosCredito from './viewTemplates/datos_credito';
 import Integrantes from './viewTemplates/integrantes';
+// Template Detalle 
+import MoreInfoPanel from './viewTemplates/detalle/MoreInfoPanel';
+
+
 class Captura extends Component {
   constructor(props) {
     super(props);
     // interface to validate
     this.state = {};
-    this.handleOnChangeInput = this.handleOnChangeInput.bind(this);
+    this.handleOnChangeInput = this.handleOnChangeInput.bind(this);    
+    this.handleMoreInfo = this.handleMoreInfo.bind(this);
   }
   /*
    * React methods
@@ -48,9 +53,19 @@ class Captura extends Component {
         this.setState({allData:{...this.props.initData}});
     
   }
-  //
+  handleMoreInfo(event, panelRelated){
+    this.props.setDialogNotificationModal({
+      content: <MoreInfoPanel
+        initData={this.state.panelInfo}
+        setDataToParent={this.getDataFromPanelModal}
+        handleOnClose={this.props.setDialogNotificationModalToInit} />,
+      opened: true,
+      buttonsHidden: true,
+    });
+  }
+ 
+
   render() {
-    console.log(this.props)
             const {
                classes = { closeButton: "" },
                handleOnClose = e => console.log("Close icon"),
@@ -137,16 +152,17 @@ class Captura extends Component {
                  }
                ],
                contentList: [
-                 <div style={{ 'width': '100%'}}> 
+                 <div style={{ 'width': '100%', 'padding': '8px 24px 24px'}}> 
                     <DatosCredito></DatosCredito>
                  </div>,
                  <div style={{ 'width': '100%'}}> 
-                    <Integrantes></Integrantes>
+                    <Integrantes onClick={this.handleMoreInfo} {...this.props}></Integrantes>
                  </div>,
                  <div>prueba</div>,
                  <div>seguros</div>,
                  <div>anexar documentos</div>
-               ]
+               ],
+               contentPadding: 0
                //   spaceBetween: 30
              };
 
@@ -188,7 +204,9 @@ class Captura extends Component {
 }
 
 const mapStateToProps = state => ({
-  appBuffer: state.app.bufferState
+  appBuffer: state.app.bufferState,
+  arrayIntegrantes: state.capturaIntegrantes
+  
 });
 
 export default connect(

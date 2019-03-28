@@ -31,19 +31,19 @@ const TableBodyContent = props => {
           className={classes.tableRow}
           key={idx}
           onClick={!rowClickDisabled ? handleRowChange && (() => handleRowChange(rowItem)) : null} >
-            { columsData.map( i => {
+            { columsData.map( (i,k) => {
               const CellComponent = i.component || null;
               if (CellComponent && typeof(CellComponent) === 'function')
-                return <CellComponent key={i.key} rowId={idx} className={classes.tableCell} handleRowChange={rowClickDisabled ? handleRowChange : null}>
-                  { typeof(rowItem[i.key]) !== 'object' ? rowItem[i.key] : <pre style={{color:'blue'}}>OBJECT</pre> }
+                return <CellComponent key={k} rowId={idx} className={classes.tableCell} handleRowChange={rowClickDisabled ? handleRowChange : null}>
+                  { typeof(rowItem[k]) !== 'object' ? rowItem[k] : <pre style={{color:'blue'}}>OBJECT</pre> }
                 </CellComponent>
-              return <TableCell key={i.key} className={classes.tableCell}>
-                { typeof(rowItem[i.key]) !== 'object' ? rowItem[i.key] : <pre style={{color:'blue'}}>OBJECT</pre> }
+              return <TableCell key={k} className={classes.tableCell}>
+                { typeof(rowItem[k]) !== 'object' ? rowItem[k] : <pre style={{color:'blue'}}>OBJECT</pre> }
               </TableCell>
             }) }
           </TableRow>
         : <RowTemplate
-            key={rowItem.persona}
+            key={idx}
             {...rowItem}
             {...props} />
         )}

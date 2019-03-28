@@ -5,7 +5,8 @@ export default Object.freeze({
     { key: 'monto_seguro', label: 'Monto Seguro'},
     { key: 'pago', label: 'Pago'},
     { key: 'tipo_relacion', label: 'Tipo de Relación '},
-    { key: 'detalle', label: 'Eliminar'}
+    { key: 'detalle', label: 'Detalle'},
+    { key: 'eliminar', label: 'Eliminar'}
   ]
 });
 

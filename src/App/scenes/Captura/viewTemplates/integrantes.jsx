@@ -21,18 +21,20 @@ class AcordionCredito extends React.Component{
   }
   handleRowChange(){}
   render(){
+    console.log(this.props.arrayIntegrantes.arrayIntegrantesTable)
     const resultTablePanelSpread = {
       title: null,
       columsData: IntegrantesTableInterface.colums,
-      rowData: this.state.searchResult.itemListResult,
+      rowData: this.props.arrayIntegrantes.arrayIntegrantesTable,
       rowTemplate: IntegrantesRowTemplate,
       handleRowChange: this.handleRowChange,
       emptyRowDataMsg: 'Sin resultados, busca o registra un usuario.',
       initRowDataMsg: null,
-      intoPanelContainer: false
+      intoPanelContainer: false,
+      classesOverride: {tableBody: {backgroundColor: "white"}}
     }
     return(
-      <div className="acordion">
+      <div className="integrantes">
         <h4>Gestionar integrantes</h4>
         <ResultTablePanel {...resultTablePanelSpread} />
       </div>

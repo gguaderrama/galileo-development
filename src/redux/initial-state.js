@@ -63,9 +63,6 @@ export const initialState = {
     },
     bufferState: null
   },
-  captura: {
-     arrayIntegrantes : [{id: 1}]
-  },
   catalogsCollection: {
     mapaJNDI: null,
     empresas: GENERIC.CATALOGO_EMPRESAS,

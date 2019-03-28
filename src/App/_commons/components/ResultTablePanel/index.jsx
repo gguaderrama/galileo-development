@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
-import TableCell from '@material-ui/core/TableCell';
+import CustomTableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import { styles } from './styles';
 import { withStyles } from '@material-ui/core/styles';
@@ -19,6 +19,15 @@ const ResultTablePanel = props => {
     emptyRowDataMsg = 'No results found', initRowDataMsg = null  } = props;
   const { handleRowChange = event => console.log('handleRowChange into ResultTablePanel', event) } = props;
   //const { handlePageChange = event => console.log('handlePageChange into ResultTablePanel', event) } = props;
+
+  const TableCell = withStyles(theme => ({
+    head: {
+      borderTop: '1px solid #ededed'
+    },
+    body: {
+      fontSize: 14,
+    },
+  }))(CustomTableCell);
 
   const innerRender = <Fragment>
     { title && React.isValidElement(title)
