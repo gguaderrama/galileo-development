@@ -39,7 +39,10 @@ class Captura extends Component {
   constructor(props) {
     super(props);
     // interface to validate
-    this.state = {};
+    this.state = {
+       allData: {nro_cuenta: '', micronegocio_value: 1}
+
+    };
     this.handleOnChangeInput = this.handleOnChangeInput.bind(this);    
     this.handleMoreInfo = this.handleMoreInfo.bind(this);
   }
@@ -48,10 +51,10 @@ class Captura extends Component {
    */
 
   handleOnChangeInput(event, panel) {
-    //this.setState({[panel]: {...this.state[panel], [event.target.name]: event.target.value}});
+    this.setState({[panel]: {...this.state[panel], [event.target.name]: event.target.value}});
   }
   componentDidMount() {
-        this.setState({allData:{...this.props.initData}});
+        // this.setState({allData:{...this.props.initData}});
     
   }
   handleMoreInfo(event, panelRelated){
@@ -67,12 +70,31 @@ class Captura extends Component {
  
 
   render() {
+    console.log(this.props.captura.micronegocio)
+    /**************** Data Colecction Panel Acordion ************************** */
+    const colecctionDatosCredito = {
+      classes,
+      ...this.state.allData,
+      micronegocio: this.props.captura.micronegocio,
+      tipo_producto: this.props.captura.tipo_producto,
+      categoria: this.props.captura.categoria,
+      producto: this.props.captura.producto,
+      title: null,
+      handleOnChange: e => this.handleOnChangeInput(e, 'allData'),
+      viewTemplate: DatosCredito,
+      intoPanelContainer: false,
+    }
+
+
+    /*************** Data Colection Panel Acordion ***************************** */
             const {
                classes = { closeButton: "" },
                handleOnClose = e => console.log("Close icon"),
                submitDisabled = false
              } = this.props;
              const { allData } = this.state;
+
+
 
              const dataCapturaSolicitud = {
                classes,
@@ -154,7 +176,8 @@ class Captura extends Component {
                ],
                contentList: [
                  <div style={{ 'width': '100%', 'padding': '8px 24px 24px'}}> 
-                    <DatosCredito></DatosCredito>
+                 <DataCollectionPanel {...colecctionDatosCredito} />
+                    {/* <DatosCredito></DatosCredito> */}
                  </div>,
                  <div style={{ 'width': '100%'}}> 
                     <Integrantes {...this.props}></Integrantes>
@@ -208,7 +231,7 @@ class Captura extends Component {
 
 const mapStateToProps = state => ({
   appBuffer: state.app.bufferState,
-  arrayIntegrantes: state.capturaIntegrantes
+  captura: state.capturaIntegrantes
   
 });
 

@@ -24,6 +24,7 @@ const SelectDecored = props => {
     itemList,
     renderValue,
     disabled=false,
+    defaultValue='',
     onEmptyMsg='Empty select...',
     // about Error validate
     texto='',
@@ -44,6 +45,7 @@ const SelectDecored = props => {
           return renderValue
         }}
         onChange={handleOnChange}
+        defaultValue={defaultValue}
         inputProps={inputProps}
         children={
           itemList && itemList.map(item => item && <MenuItem key={item.key} value={item.key}>{item.name}</MenuItem>)

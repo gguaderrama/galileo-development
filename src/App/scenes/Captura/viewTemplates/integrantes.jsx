@@ -55,7 +55,7 @@ if(whishPanel == 'panelInfo'){
     const resultTablePanelSpread = {
       title: null,
       columsData: IntegrantesTableInterface.colums,
-      rowData: this.props.arrayIntegrantes.arrayIntegrantesTable,
+      rowData: this.props.captura.arrayIntegrantesTable,
       rowTemplate: IntegrantesRowTemplate,
       handleRowChange: this.handleRowChange,
       emptyRowDataMsg: 'Sin resultados, busca o registra un usuario.',
