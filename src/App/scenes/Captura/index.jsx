@@ -29,6 +29,10 @@ import { styles } from "./styles";
 import MoreInfoPanel_solicitud from './viewTemplates/MoreInfoPanel_solicitud';
 import MoreInfoPanel_credito from './viewTemplates/MoreInfoPanel_credito';
 import AcordionCredito from './viewTemplates/acordion_credito';
+import { SteperTemplate } from "./viewTemplates/SteperTemplate";
+import Referencias from './Referencias';
+import Seguros from './Seguros';
+
 class Captura extends Component {
   constructor(props) {
     super(props);
@@ -142,8 +146,8 @@ class Captura extends Component {
 
                  </div>,
                  <div>demop</div>,
-                 <div>prueba</div>,
-                 <div>seguros</div>,
+                 <Referencias /> ,
+                 <Seguros />,
                  <div>anexar documentos</div>
                ]
                //   spaceBetween: 30
@@ -152,6 +156,7 @@ class Captura extends Component {
              // Render indeed
              return (
                <div>
+                 <SteperTemplate />
                  <div className="left">
                    <p>
                      Captura toda la información requerida en las
