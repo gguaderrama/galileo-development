@@ -34,7 +34,7 @@ const TableRowTemplate = props => {
 
       <TableCell className={classes.tableCell}>
       <Tooltip title="Eliminar">
-        <IconButton color="primary" onClick={() => props.handleRowChange(props.persona)} >
+        <IconButton color="primary" onClick={(e) => props.handleRowChange(e, 'panelDelete')} >
            <DeleteIcon />
         </IconButton>
       </Tooltip>

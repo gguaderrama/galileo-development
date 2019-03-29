@@ -416,11 +416,13 @@ class DigitalizacionComponent extends Component {
         console.log("DW_RIGHTObject", DW_RIGHTObject)
         return (
             <Grid>
-                <Row>
-                    <div id="dwtcontrolContainer"></div>
-                    <div id="dwtcontrolContainerMiniatures"></div>
+                <Row style={{'marginLeft': '18%'}}>
+                 
+                        <div id="dwtcontrolContainer"></div>
+                        <div id="dwtcontrolContainerMiniatures"></div>
+                 
                 </Row>
-                <Row>
+                <Row style={{'marginLeft': '13.4%'}}>
                     <Button variant="contained" color="primary" className={classes.button} onClick={digitalizarImg}>
                         Digitalizar
                     </Button>
