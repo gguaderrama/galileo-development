@@ -25,29 +25,31 @@ class AcordionCredito extends React.Component{
     }
   }
   handleRowChange(event,  whishPanel) {
-    this.props.setDialogNotificationModal({
-      content: <MoreInfoPanel
-        initData={this.state.panelInfo}
-        setDataToParent={this.getDataFromPanelModal}
-        handleOnClose={this.props.setDialogNotificationModalToInit} />,
-      opened: true,
-      buttonsHidden: true,
-    });
-    //console.log('handleRowChange in ProspectoDetail :>', event.currentTaget, rowId, whishPanel);
-    // switch (whishPanel) {
-    //   case 'simulador':
-    //     this.props.setDialogNotificationModal({
-    //       content: <SimulatorPanel
-    //         //initData={this.state.panelInfoMore}
-    //         //setDataToParent={this.getDataFromPanelModal}
-    //         handleOnClose={this.props.setDialogNotificationModalToInit} />,
-    //       opened: true,
-    //       buttonsHidden: true,
-    //     });
-    //     break;
-    //   default:
+console.log(whishPanel + 'elnombre del panel')
 
-    // }
+if(whishPanel == 'panelInfo'){
+  this.props.setDialogNotificationModal({
+    content: <MoreInfoPanel
+      initData={this.state.panelInfo}
+      setDataToParent={this.getDataFromPanelModal}
+      handleOnClose={this.props.setDialogNotificationModalToInit} />,
+    opened: true,
+    buttonsHidden: true,
+  });
+}else{
+  this.props.setDialogNotificationModal({
+    title: '',
+    content: '¿Seguro que desea Eliminar?',
+    subcontent: '',
+    opened: true,
+    handleClose: this.props.setDialogNotificationModalToInit,
+    handleOnClose: this.props.setDialogNotificationModalToInit,
+    flag: true
+  });
+}
+
+  
+
   }
   render(){
     const resultTablePanelSpread = {
