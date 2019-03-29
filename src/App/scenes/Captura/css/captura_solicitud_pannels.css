@@ -20,3 +20,22 @@
   width: 30%;
   float: right;
 }
+
+hr{
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.acordion h4 {
+  font-size: 13px;
+}
+
+.col-md-3{
+  width:22%;
+  margin-right: 3%;
+}
+
+.MuiSelect-select-135{
+  font-size: 13px !important;
+  color: #929191 !important;
+}
