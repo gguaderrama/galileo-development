@@ -29,7 +29,7 @@ import { styles } from "./styles";
 import MoreInfoPanel_solicitud from './viewTemplates/MoreInfoPanel_solicitud';
 import MoreInfoPanel_credito from './viewTemplates/MoreInfoPanel_credito';
 import { SteperTemplate } from "./viewTemplates/SteperTemplate";
-import {Referencias} from './Referencias';
+import Referencias from './Referencias';
 import Seguros from './Seguros';
 
 class Captura extends Component {
