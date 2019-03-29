@@ -13,10 +13,13 @@ class Seguros extends Component{
   }
 
   addInsurance = (e) =>{
-    let {showAdd} = this.state;
+    let {showAdd,showDataInsurance} = this.state;
     if(e.target.value === 'S') showAdd = true;
-    else showAdd = false;
-    this.setState({showAdd})
+    else {
+      showAdd = false;
+      showDataInsurance = false;
+    }
+    this.setState({showAdd,showDataInsurance})
   }
 
   addData = () =>{

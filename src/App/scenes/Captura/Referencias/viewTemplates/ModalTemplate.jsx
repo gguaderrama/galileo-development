@@ -1,32 +1,33 @@
-import React, { Component,Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 import {connect} from 'react-redux';
 // Commons
 import TextFieldDecored from 'App/_commons/elements/TextFieldDecored';
 import SelectDecored from 'App/_commons/elements/SelectDecored';
 import DataCollectionPanel, { handleAttrChangeValue }  from 'App/_commons/components/DataCollectionPanel';
-import { RowTemplate} from './RowTemplate';
+import { RowEditTemplate} from './RowTemplate';
 import ResultTablePanel from 'App/_commons/components/ResultTablePanel';
 // Actions
 import * as appActions from 'redux/shared-reducers/app-actions';
-import { Button } from '@material-ui/core';
+import { Button, Checkbox } from '@material-ui/core';
 
-const colums = [{key:1,label:'Tipo de Referencia'},
-                {key:2,label:'Nombre'},
-                {key:3,label:'Teléfono particular'},
-                {key:4,label:'Teléfono celular'},
-                {key:5,label:'Parentesco'}];
-const infoDummy = [{'referencia':'Laboral','nombre':'The Boss','particular':5578787878,'celular':5578787878,'parentesco':'El Padrino'},
-{'referencia':'Casa','nombre':'Jefret','particular':5567656543,'celular':5566778899,'parentesco':'Cousin'},
-{'referencia':'Oficina','nombre':'Chachis','particular':5590987876,'celular':5544332211,'parentesco':'Secretary'},
-{'referencia':'Laboral','nombre':'Peter','particular':5543212345,'celular':5566112299,'parentesco':'Partner'},];
+const colums = [{key:0,label:<Checkbox/>},
+                {key:1,label:'Nombre(s)'},
+                {key:2,label:'Apellido paterno'},
+                {key:3,label:'Apellido materno'},
+                {key:5,label:'Parentesco'},
+                {key:5,label:'Teléfono particular'},
+                {key:4,label:'Teléfono celular'},];
+const infoDummy = [{'paterno':'Laboral','materno':'materno','nombre':'The Boss','particular':5578787878,'celular':5578787878,'parentesco':'El Padrino'},
+{'paterno':'Casa','materno':'materno','nombre':'Jefret','particular':5567656543,'celular':5566778899,'parentesco':'Cousin'},
+{'paterno':'Oficina','materno':'materno','nombre':'Chachis','particular':5590987876,'celular':5544332211,'parentesco':'Secretary'},];
 const resultTablePanelSpread = {
     columsData: colums,
     rowData: infoDummy,
-    rowTemplate: RowTemplate,
+    rowTemplate: RowEditTemplate,
     emptyRowDataMsg: 'Sin resultados, no existen referencias.',
     rowClickDisabled:true,
     classesOverride: {tableBody: {backgroundColor: "white"}},
-    intoPanelContainer: true,
+    title: 'Referencias',
     view:'editar',
 }
 
@@ -50,6 +51,7 @@ class ModalTemplate extends Component{
           <DataCollectionPanel {...this.state.withTemplatePanel} 
             title={'Datos Referencia'}
             statusList={statusList}
+            intoPanelContainer={true}
             handleOnChange={e => this.handleAttrChangeValue(e, 'withTemplatePanel')}>
             <div>
               <div style={{display:'flex', justifyContent: 'space-between'}}>
@@ -86,8 +88,8 @@ class ModalTemplate extends Component{
 export default connect(null,appActions)(ModalTemplate);
 
 export const statusList = [
-  {theKey: 'C', theName: 'Contento'},
-  {theKey: 'T', theName: 'Triste'},
-  {theKey: 'E', theName: 'Enojado'},
-  {theKey: 'A', theName: 'Aburrido'},
+  {theKey: 'E', theName: 'Esposo(a)'},
+  {theKey: 'H', theName: 'Hijo(a)'},
+  {theKey: 'C', theName: 'Conyuge'},
+  {theKey: 'O', theName: 'Otro'},
 ];
