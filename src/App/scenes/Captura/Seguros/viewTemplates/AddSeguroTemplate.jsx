@@ -8,6 +8,7 @@ import { RowBeneficiarioTemplate } from './RowBeneficiariosTemplate';
 import { Checkbox, Grid, IconButton, Icon } from '@material-ui/core';
 import AddBeneficiarioTemplate from './AddBeneficiarioTemplate';
 import { TitlePanelContainer } from 'App/_commons/elements/PanelContainer';
+import ModalErrorTemplate from './ModalErrorTemplate';
 // Actions
 import * as appActions from 'redux/shared-reducers/app-actions';
 
@@ -45,6 +46,15 @@ class AddSeguroTemplate extends Component {
       handleClose: this.props.setDialogNotificationModalToInit,
       buttonsHidden: true,
       flag: true
+    })
+  }
+
+  handleOnClickDelete = () => {
+    this.props.setDialogNotificationModal({
+      content: <ModalErrorTemplate />,
+      opened: true,
+      handleClose: this.props.setDialogNotificationModalToInit,
+      buttonsHidden: true,
     })
   }
 
@@ -87,7 +97,7 @@ class AddSeguroTemplate extends Component {
             </Grid>
             <Grid item xs={2}>
               <IconButton onClick={this.handleOnClickAdd} color="primary"><Icon>add</Icon></IconButton>
-              <IconButton color="primary"><Icon>delete</Icon></IconButton>
+              <IconButton onClick={this.handleOnClickDelete} color="primary"><Icon>delete</Icon></IconButton>
             </Grid>
           </Grid>
           <ResultTablePanel {...resultTablePanelSpread} /> 
