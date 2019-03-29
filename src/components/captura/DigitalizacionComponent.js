@@ -415,25 +415,27 @@ class DigitalizacionComponent extends Component {
         console.log("DW_RIGHTObject", DW_RIGHTObject)
         return (
             <Grid>
-                <Row>
+            <Row style={{'marginLeft': '18%'}}>
+             
                     <div id="dwtcontrolContainer"></div>
                     <div id="dwtcontrolContainerMiniatures"></div>
-                </Row>
-                <Row>
-                    <Button variant="contained" color="primary" className={classes.button} onClick={digitalizarImg}>
-                        Digitalizar
-                    </Button>
-                    <Button variant="contained" color="primary" className={classes.button} onClick={loadLocalImage}>
-                        Adjuntar Imagen
-                    </Button>
-                    <Button variant="contained" color="primary" className={classes.button} onClick={cleanVisor}>
-                        Limpiar Visor Imágenes
-                    </Button>
-                    <Button variant="contained" color="primary" className={classes.button} onClick={() => saveImage(empresa, oficina, solicitud, codigoProducto, noIntegrante, noCliente, rutaValijaLiberacion, openDialog)}>
-                        Enviar
-                    </Button>
-                </Row>
-            </Grid>
+             
+            </Row>
+            <Row style={{'marginLeft': '13.4%'}}>
+                <Button variant="contained" color="primary" className={classes.button} onClick={digitalizarImg}>
+                    Digitalizar
+                </Button>
+                <Button variant="contained" color="primary" className={classes.button} onClick={loadLocalImage}>
+                    Adjuntar Imagen
+                </Button>
+                <Button variant="contained" color="primary" className={classes.button} onClick={cleanVisor}>
+                    Limpiar Visor Imágenes
+                </Button>
+                <Button variant="contained" color="primary" className={classes.button} onClick={() => saveImage(empresa, oficina, solicitud, codigoProducto, noIntegrante, noCliente, rutaValijaLiberacion, openDialog)}>
+                    Enviar
+                </Button>
+            </Row>
+        </Grid>
         )
     }
 }

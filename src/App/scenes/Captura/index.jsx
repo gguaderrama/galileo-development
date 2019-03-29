@@ -33,6 +33,13 @@ import { SteperTemplate } from "./viewTemplates/SteperTemplate";
 import Referencias from './Referencias';
 import Seguros from './Seguros';
 
+// Template agregado 
+import DatosCredito from './viewTemplates/datos_credito';
+import Integrantes from './viewTemplates/integrantes';
+// Template Detalle 
+import DigitalizacionComponent from 'components/captura/DigitalizacionComponent';
+
+
 class Captura extends Component {
   constructor(props) {
     super(props);
@@ -139,16 +146,17 @@ class Captura extends Component {
                  }
                ],
                contentList: [
+                <div style={{ 'width': '100%', 'padding': '8px 24px 24px'}}> 
+                <DatosCredito></DatosCredito>
+             </div>,
                  <div style={{ 'width': '100%'}}> 
-                    <AcordionCredito></AcordionCredito>
-                       
-                           
-
-                 </div>,
-                 <div>demop</div>,
+                 <Integrantes {...this.props}></Integrantes>
+              </div>,
                  <Referencias /> ,
                  <Seguros />,
-                 <div>anexar documentos</div>
+                 <div style={{ 'width': '100%'}}> 
+                 <DigitalizacionComponent {...this.props} />
+                 </div>
                ]
                //   spaceBetween: 30
              };
@@ -192,7 +200,8 @@ class Captura extends Component {
 }
 
 const mapStateToProps = state => ({
-  appBuffer: state.app.bufferState
+  appBuffer: state.app.bufferState,
+  arrayIntegrantes: state.capturaIntegrantes
 });
 
 export default connect(
