@@ -28,10 +28,15 @@ import { styles } from "./styles";
 // Template agregado 
 import MoreInfoPanel_solicitud from './viewTemplates/MoreInfoPanel_solicitud';
 import MoreInfoPanel_credito from './viewTemplates/MoreInfoPanel_credito';
+import AcordionCredito from './viewTemplates/acordion_credito';
+import { SteperTemplate } from "./viewTemplates/SteperTemplate";
+import Referencias from './Referencias';
+import Seguros from './Seguros';
+
+// Template agregado 
 import DatosCredito from './viewTemplates/datos_credito';
 import Integrantes from './viewTemplates/integrantes';
 // Template Detalle 
-import MoreInfoPanel from './viewTemplates/detalle/MoreInfoPanel';
 import DigitalizacionComponent from 'components/captura/DigitalizacionComponent';
 
 
@@ -39,62 +44,28 @@ class Captura extends Component {
   constructor(props) {
     super(props);
     // interface to validate
-    this.state = {
-       allData: {nro_cuenta: '', micronegocio_value: 1}
-
-    };
-    this.handleOnChangeInput = this.handleOnChangeInput.bind(this);    
-    this.handleMoreInfo = this.handleMoreInfo.bind(this);
+    this.state = {};
+    this.handleOnChangeInput = this.handleOnChangeInput.bind(this);
   }
   /*
    * React methods
    */
 
   handleOnChangeInput(event, panel) {
-    this.setState({[panel]: {...this.state[panel], [event.target.name]: event.target.value}});
+    //this.setState({[panel]: {...this.state[panel], [event.target.name]: event.target.value}});
   }
   componentDidMount() {
-        // this.setState({allData:{...this.props.initData}});
+        this.setState({allData:{...this.props.initData}});
     
   }
-  handleMoreInfo(event, panelRelated){
-    this.props.setDialogNotificationModal({
-      content: <MoreInfoPanel
-        initData={this.state.panelInfo}
-        setDataToParent={this.getDataFromPanelModal}
-        handleOnClose={this.props.setDialogNotificationModalToInit} />,
-      opened: true,
-      buttonsHidden: true,
-    });
-  }
- 
-
+  //
   render() {
-    console.log(this.props.captura.micronegocio)
-    /**************** Data Colecction Panel Acordion ************************** */
-    const colecctionDatosCredito = {
-      classes,
-      ...this.state.allData,
-      micronegocio: this.props.captura.micronegocio,
-      tipo_producto: this.props.captura.tipo_producto,
-      categoria: this.props.captura.categoria,
-      producto: this.props.captura.producto,
-      title: null,
-      handleOnChange: e => this.handleOnChangeInput(e, 'allData'),
-      viewTemplate: DatosCredito,
-      intoPanelContainer: false,
-    }
-
-
-    /*************** Data Colection Panel Acordion ***************************** */
             const {
                classes = { closeButton: "" },
                handleOnClose = e => console.log("Close icon"),
                submitDisabled = false
              } = this.props;
              const { allData } = this.state;
-
-
 
              const dataCapturaSolicitud = {
                classes,
@@ -175,26 +146,25 @@ class Captura extends Component {
                  }
                ],
                contentList: [
-                 <div style={{ 'width': '100%', 'padding': '8px 24px 24px'}}> 
-                 <DataCollectionPanel {...colecctionDatosCredito} />
-                    {/* <DatosCredito></DatosCredito> */}
-                 </div>,
+                <div style={{ 'width': '100%', 'padding': '8px 24px 24px'}}> 
+                <DatosCredito></DatosCredito>
+             </div>,
                  <div style={{ 'width': '100%'}}> 
-                    <Integrantes {...this.props}></Integrantes>
-                 </div>,
-                 <div>prueba</div>,
-                 <div>seguros</div>,
+                 <Integrantes {...this.props}></Integrantes>
+              </div>,
+                 <Referencias /> ,
+                 <Seguros />,
                  <div style={{ 'width': '100%'}}> 
                  <DigitalizacionComponent {...this.props} />
                  </div>
-               ],
-               contentPadding: 0
+               ]
                //   spaceBetween: 30
              };
 
              // Render indeed
              return (
                <div>
+                 <SteperTemplate />
                  <div className="left">
                    <p>
                      Captura toda la información requerida en las
@@ -231,8 +201,7 @@ class Captura extends Component {
 
 const mapStateToProps = state => ({
   appBuffer: state.app.bufferState,
-  captura: state.capturaIntegrantes
-  
+  arrayIntegrantes: state.capturaIntegrantes
 });
 
 export default connect(

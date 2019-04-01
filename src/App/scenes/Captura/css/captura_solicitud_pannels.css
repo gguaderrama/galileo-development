@@ -2,6 +2,11 @@
   background-color: rgb(155, 155, 155) !important ;
 }
 
+.MuiSelect-selectMenu-421 {
+  font-size: 13.5px !important;
+    color: #777777 !important;
+}  
+
 .AccordionPanel-divContainer-2 {
   margin-bottom: 16px !important;
 }
@@ -72,5 +77,10 @@ hr{
   font-size: 14px !important;
     color: #212121 !important;
     margin: 0 !important;
+}
+
+.MuiSelect-selectMenu-469{
+  font-size: 13.4px;
+    color: #848282;
 }
 

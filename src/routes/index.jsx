@@ -6,8 +6,8 @@ import React from 'react';
 import { snakeToPascal } from 'utils/misc';
 
 // Features sections
-// import CapturaContainer from 'containers/captura/CapturaContainer';
-import CapturaContainer from 'App/scenes/Captura';
+import CapturaContainer from 'containers/captura/CapturaContainer';
+import Captura from '../App/scenes/Captura';
 import GestionAsignacionProspectosContainer from 'containers/GestionAsignacionProspectos/GestionAsignacionProspectosContainer';
 import StepperContainer from 'containers/Generic/StepperContainer';
 
@@ -35,6 +35,9 @@ const indexRoutes = [
       cliente={props.match.params.cliente}
       {...props} /> },
 
+  { path: "/captura",
+      routeTitle: "Captura cliente",
+      render: props => <Captura />},
   // Registro solicitud
   { path: "/registroSolicitud", component: StepperContainer, routeTitle: "Registro solicitud", viewWidthExpanded: true },
 

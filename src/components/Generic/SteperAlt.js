@@ -41,7 +41,7 @@ const Steper = (props) => {
   return (
     < MuiThemeProvider theme={theme2} >
       <div>
-        <div>
+        <div style={{marginLeft:-70 + 'px', marginTop: 30 + 'px'}}  >
           <Typography className={classes.containerTitle} color="primary">{titulo}</Typography>
         </div>
         <div className={titulo === 'Captura de solicitud' ? classes.containerCaptura : classes.containerBusqueda} >
